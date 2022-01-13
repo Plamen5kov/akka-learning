@@ -1,0 +1,102 @@
+# Vim files
+.sw[a-z]
+.*.sw[a-z]
+
+# Eclipse files
+.project
+.settings
+.classpath
+.worksheet
+bin
+
+# IDEA files
+.idea*
+*.iml
+.run
+
+# VS Code files
+.history
+.vscode
+
+# Local SBT files
+local.sbt
+.bsp
+
+# Ensime files
+.ensime
+.ensime_cache
+ensime.sbt
+
+# SBT meta-generated files
+.cache
+.cache-main
+.cache-tests
+/*/.gitignore
+
+# Metal files
+.metals
+.bloop
+metals.sbt
+
+# Console startup script files
+/*.script
+script.sbt
+
+# Scala worksheets
+*.sc
+
+# Impala HoneyBee
+/impala-honeybee
+
+# Build outputs
+/target
+target
+
+# SBT related
+/*/lib
+
+# Mac
+.DS_Store
+
+# Dev created
+extensions
+
+# Random files
+TAGS
+.tags
+*.log
+*.tmp
+*.log.gz
+/graph
+/tlog
+/log
+typescript
+/doc.html
+/schema.html
+/project.html
+/test.out
+*.jar
+*.zip
+*.tar
+*.gz
+*.bz2
+*.xz
+*.tgz
+*.tbz
+*.txz
+*.class
+/dg
+*.dot
+*.scala.old
+/stacks
+*.hprof
+*.idom
+
+# Dev Config Override File
+.custom_dev.conf
+
+# semanticdb / scalafix|fmt
+semanticdb
+.scalafmt-atscale.conf
+.scalafix-atscale.conf
+

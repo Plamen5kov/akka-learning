@@ -1,9 +1,10 @@
 package com
 
+import akka.actor.typed.delivery.internal.ProducerControllerImpl.Request
 import akka.actor.typed.scaladsl.AskPattern.Askable
 import akka.actor.typed.scaladsl.{ActorContext, Behaviors}
 import akka.actor.typed.{ActorRef, ActorSystem, Scheduler}
-import akka.io.Tcp.{Close, Command, ConfirmedClose, Message}
+import akka.io.Tcp.{Bind, Close, Command, ConfirmedClose, Message}
 import akka.util.Timeout
 import com.teoexample.AkkaTypedIncentives.{AddItem, ShoppingCartMessage, ValidateCart, shoppingBehavior}
 
@@ -49,5 +50,5 @@ object Main extends App {
   (aggregateSystem ? ((replyTo: ActorRef[Command]) => AddItem("asd", replyTo))).onComplete(println(_))
 //  rootOnlineStoreActor ! AddItem("dddd", rootOnlineStoreActor)
 //  rootOnlineStoreActor ! ValidateCart
-  //  rootOnlineStoreActor ! Close
+//  aggregateSystem ! Request()
 }

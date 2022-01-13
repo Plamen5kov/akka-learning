@@ -13,5 +13,6 @@ libraryDependencies ++=
   Seq(
     "com.typesafe.akka" %% "akka-actor" % akkaVersion,
     "com.typesafe.akka" %% "akka-actor-typed" % akkaVersion,
+    "com.typesafe.akka" %% "akka-stream" % akkaVersion,
     "ch.qos.logback" % "logback-classic" % "1.2.8" % Runtime
   )
