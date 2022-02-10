@@ -8,8 +8,9 @@ import akka.io.Tcp.{Bind, Close, Command, ConfirmedClose, Message}
 import akka.util.Timeout
 import com.teoexample.AkkaTypedIncentives.{AddItem, ShoppingCartMessage, ValidateCart, shoppingBehavior}
 
+import java.time.ZonedDateTime
 import scala.concurrent.{ExecutionContext, ExecutionContextExecutor}
-import scala.concurrent.duration.DurationInt
+import scala.concurrent.duration.{Duration, DurationInt}
 
 //#main-class
 object Main extends App {
@@ -51,4 +52,24 @@ object Main extends App {
 //  rootOnlineStoreActor ! AddItem("dddd", rootOnlineStoreActor)
 //  rootOnlineStoreActor ! ValidateCart
 //  aggregateSystem ! Request()
+
+//  val builder = Vector.newBuilder[(String, (String, String))]
+//
+//  builder += ("1" -> ("orgId1", "value setting1"))
+//  builder += ("2" -> ("orgId2", "value setting2"))
+//
+//  val aggregateSettings = builder.result()
+//
+//  println(aggregateSettings)
+//  aggregateSettings.foreach { case (configKey, (orgId, settingValue)) =>
+//    println(s"${configKey} => ${orgId}, ${settingValue}")
+//  }
+
+  val now =     ZonedDateTime.parse("2022-01-26T16:08:09.179062Z[UTC]").toEpochSecond
+  val target =  ZonedDateTime.parse("2022-01-26T16:08Z[UTC]").toEpochSecond
+  println(now - target)
+
+  val now1 =     ZonedDateTime.parse("2022-01-26T16:09:09Z").toEpochSecond
+  val target1 =  ZonedDateTime.parse("2022-01-26T16:08:10Z").toEpochSecond
+  println(now1 - target1)
 }

@@ -10,8 +10,13 @@ object AggregateMaintenancePersistence {
   def apply(): Behavior[Message] = Behaviors.setup[Message] { context =>
     implicit val ec: ExecutionContext = context.executionContext
 
-    Behaviors.receiveMessage { case message: Message => context.log.debug(s"message: $message received")
-      Behaviors.same
+    Behaviors.receiveMessage {
+      case message: Message =>
+        context.log.debug(s"message: $message")
+        Behaviors.same
+      case _ =>
+        context.log.debug("should not be called!")
+        Behaviors.same
     }
   }
 

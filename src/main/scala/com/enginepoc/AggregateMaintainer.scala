@@ -7,10 +7,10 @@ class AggregateMaintainer extends Actor {
 
   override def preStart() = {
     //obrain typed actor instance
-    val system: ActorSystem[AggregateMaintenancePersistence.Hello] = ActorSystem(AggregateMaintenancePersistence(), "hello")
+    val system: ActorSystem[AggregateMaintenancePersistence.Hello] = ActorSystem(AggregateMaintenancePersistence(), "AggregateMaintenancePersistence")
 
     //send message to typed actor
-    system ! AggregateMaintenancePersistence.Hello("asd")
+    system ! AggregateMaintenancePersistence.Hello("world")
   }
 
   override def receive: Receive = {
