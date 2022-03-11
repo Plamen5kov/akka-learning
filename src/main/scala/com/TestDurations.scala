@@ -1,8 +1,7 @@
 package com
 
 import scala.annotation.tailrec
-import scala.concurrent.duration.Duration.Zero
-import scala.concurrent.duration.{DAYS, DurationInt, FiniteDuration, HOURS, MILLISECONDS, MINUTES, SECONDS, TimeUnit}
+import scala.concurrent.duration.{DAYS, Duration, DurationInt, FiniteDuration, HOURS, MILLISECONDS, MINUTES, SECONDS, TimeUnit}
 
 object TestDurations extends App {
 
@@ -43,7 +42,7 @@ object TestDurations extends App {
   def convertToCountPerMinute(count: Int, period: FiniteDuration): Int = {
     import scala.concurrent.duration.FiniteDuration
     require(count >= 0)
-    require(period > Zero)
+    require(period > Duration.Zero)
     val ratio: Double = FiniteDuration(1, MINUTES) / period
     (count * ratio).ceil.toInt
   }
